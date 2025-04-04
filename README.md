@@ -52,6 +52,15 @@ KEA_LIBS = /usr/lib64
 If those settings are not correct then you can manually edit the file.  It will only be re-created
 if you remove it manually or by running `make clean`.
 
+## Disable multi threading
+This hook does not support multi threading. Newer version of Kea comes with multi threading enabled by 
+default which will cause the hook to error out when loading.
+
+```
+        "multi-threading": {
+               "enable-multi-threading": false
+        }
+```
 ## Loading the kea_python hook
 To load this hook into kea you will need a `hook-libraries` section in `kea.conf` that looks something
 like the following:
